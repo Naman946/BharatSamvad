@@ -29,16 +29,27 @@ const MediaGrid = () => {
                 url = `https://newswebsite.onrender.com/api/v1/articles/by-category?categoryId=${categoryId}`;
             }
 
-            try {
-                const response = await fetch(url);
+            fetch(url, {
+                method: 'GET', // or POST, PUT, DELETE, etc., if needed
+                headers: {
+                    'Content-Type': 'application/json',
+                    // Add other headers if needed
+                },
+                credentials: 'include', // Include credentials if you are sending cookies
+            })
+            .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data: Article[] = await response.json();
-                setMediaItems(data);
-            } catch (error) {
+                return response.json();
+            })
+            .then(data => {
+                setMediaItems(data); // Assuming setMediaItems is a function to handle the fetched data
+            })
+            .catch(error => {
                 console.error('Error fetching articles:', error);
-            }
+            });
+            
         };
 
         fetchArticles();
