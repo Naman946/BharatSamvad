@@ -43,12 +43,12 @@ const MediaGrid = () => {
         fetchArticles();
     }, [location.search]);
 
-    const [advertisements] = useState<Advertisement[]>([
-        { title: 'Ad 1', image: 'base64adstring2' },
-        { title: 'Ad 2', image: 'base64adstring2' },
-        { title: 'Ad 3', image: 'base64adstring3' },
-        { title: 'Ad 4', image: 'base64adstring4' }
-    ]);
+    // const [advertisements] = useState<Advertisement[]>([
+    //     { title: 'Ad 1', image: 'base64adstring2' },
+    //     { title: 'Ad 2', image: 'base64adstring2' },
+    //     { title: 'Ad 3', image: 'base64adstring3' },
+    //     { title: 'Ad 4', image: 'base64adstring4' }
+    // ]);
 
     return (
         <Box sx={{ p: 2 }}>
