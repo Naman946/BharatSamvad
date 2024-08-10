@@ -8,10 +8,10 @@ interface Article {
     image: string; // base64 image string
 }
 
-interface Advertisement {
-    title: string;
-    image: string; // base64 image string
-}
+// interface Advertisement {
+//     title: string;
+//     image: string; // base64 image string
+// }
 
 const MediaGrid = () => {
     const location = useLocation();
