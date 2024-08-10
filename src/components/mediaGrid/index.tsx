@@ -23,33 +23,22 @@ const MediaGrid = () => {
             const categoryId = searchParams.get('categoryId') || '';
 
             //let url = 'http://localhost:8080/api/v1/articles';
-            let url = 'https://newswebsite-fza6.onrender.com/api/v1/articles';
+            let REACT_APP_API_URL = 'https://newswebsite-fza6.onrender.com/api/v1/articles';
 
             if (categoryId) {
-                url = `https://newswebsite.onrender.com/api/v1/articles/by-category?categoryId=${categoryId}`;
+                REACT_APP_API_URL = `https://newswebsite.onrender.com/api/v1/articles/by-category?categoryId=${categoryId}`;
             }
 
-            fetch(url, {
-                method: 'GET', // or POST, PUT, DELETE, etc., if needed
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Add other headers if needed
-                },
-                credentials: 'include', // Include credentials if you are sending cookies
-            })
-            .then(response => {
+            try {
+                const response = await fetch(REACT_APP_API_URL);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json();
-            })
-            .then(data => {
-                setMediaItems(data); // Assuming setMediaItems is a function to handle the fetched data
-            })
-            .catch(error => {
+                const data: Article[] = await response.json();
+                setMediaItems(data);
+            } catch (error) {
                 console.error('Error fetching articles:', error);
-            });
-            
+            }
         };
 
         fetchArticles();
