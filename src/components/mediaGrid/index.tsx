@@ -23,14 +23,17 @@ const MediaGrid = () => {
             const categoryId = searchParams.get('categoryId') || '';
 
             //let url = 'http://localhost:8080/api/v1/articles';
-            let REACT_APP_API_URL = 'https://newswebsite-fza6.onrender.com/api/v1/articles';
+            let url = 'https://newswebsite-fza6.onrender.com/api/v1/articles';
 
             if (categoryId) {
-                REACT_APP_API_URL = `https://newswebsite.onrender.com/api/v1/articles/by-category?categoryId=${categoryId}`;
+                url = `https://newswebsite.onrender.com/api/v1/articles/by-category?categoryId=${categoryId}`;
+                
+                //url = `http://localhost:8080/api/v1/articles/by-category?categoryId=${categoryId}`;
+
             }
 
             try {
-                const response = await fetch(REACT_APP_API_URL);
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
