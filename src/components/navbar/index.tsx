@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
     <AppBar position="static" style={{ backgroundColor: 'blue' }}>
       <Container maxWidth="lg">
         <Toolbar>
-          <img src="/BhartSmwadPng.jpeg" alt="Logo" style={{ height: 60, marginRight: 16 }} />
+          <img src="/logo_bharatsmvad.png" alt="Logo" style={{ height: 60, marginRight: 16 }} />
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
             {navItems.map((item) => (
               <Button
