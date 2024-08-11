@@ -12,30 +12,30 @@
   z-index: 9999;          /* Ensure the loader is above other content */
 }
 
-.bubble-container {
+.image-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.bubble {
-  width: 20px;           /* Size of each bubble */
-  height: 20px;          /* Size of each bubble */
-  margin: 5px;           /* Spacing between bubbles */
-  background-color: #00BFFF; /* Color of bubbles */
-  border-radius: 50%;    /* Make it round */
+.image {
+  width: 100px;            /* Set the width of the circular image */
+  height: 100px;           /* Set the height of the circular image */
+  margin: 10px;            /* Adjust spacing between images */
+  border-radius: 50%;     /* Make the image circular */
+  object-fit: cover;       /* Ensure the image covers the container */
   animation: bubble 1.5s infinite ease-in-out; /* Animation */
 }
 
-.bubble:nth-child(2) {
+.image:nth-child(2) {
   animation-delay: 0.3s;
 }
 
-.bubble:nth-child(3) {
+.image:nth-child(3) {
   animation-delay: 0.6s;
 }
 
-.bubble:nth-child(4) {
+.image:nth-child(4) {
   animation-delay: 0.9s;
 }
 
