@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Card, CardMedia, Typography, Box } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
+import Loader  from '../ArticleDetailsPage/Loader';
 
 interface Article {
     title: string;
@@ -16,9 +17,11 @@ interface Article {
 const MediaGrid = () => {
     const location = useLocation();
     const [mediaItems, setMediaItems] = useState<Article[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchArticles = async () => {
+            setLoading(true);
             const searchParams = new URLSearchParams(location.search);
             const categoryId = searchParams.get('categoryId') || '';
 
@@ -40,6 +43,7 @@ const MediaGrid = () => {
                 }
                 const data: Article[] = await response.json();
                 setMediaItems(data);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching articles:', error);
             }
@@ -48,6 +52,12 @@ const MediaGrid = () => {
         fetchArticles();
     }, [location.search]);
 
+
+    if (loading) {
+        return <Loader />; // Show loader while loading
+    }
+
+   
     // const [advertisements] = useState<Advertisement[]>([
     //     { title: 'Ad 1', image: 'base64adstring2' },
     //     { title: 'Ad 2', image: 'base64adstring2' },
