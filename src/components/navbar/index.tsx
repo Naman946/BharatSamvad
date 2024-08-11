@@ -8,9 +8,9 @@ const navItems = [
   { label: 'होम', href: '/' },
   { label: 'राजस्थान', href: '/rajasthan', categoryId: 'S1' },
   { label: 'उत्तर प्रदेश', href: '/uttar-pradesh', categoryId: 'S2' },
-  { label: 'उत्तराखंड', href: '/uttarakhand', categoryId: 'S3' },
+  { label: 'मध्यप्रदेश', href: '/madhyapradesh', categoryId: 'S3' },
   { label: 'मनोरंजन', href: '/manoranjan', categoryId: 'entertainment' },
-  { label: 'बॉलीवुड', href: '/bollywood', categoryId: 'bollywood' },
+  { label: 'राजनीति ', href: '/rajneeti', categoryId: 'rajneeti' },
   { label: 'E-Paper', href: '/epaper', categoryId: 'epaper' },
 ];
 

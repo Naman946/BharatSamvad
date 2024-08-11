@@ -21,6 +21,7 @@ const MediaGrid = () => {
         const fetchArticles = async () => {
             const searchParams = new URLSearchParams(location.search);
             const categoryId = searchParams.get('categoryId') || '';
+            
 
             //let url = 'http://localhost:8080/api/v1/articles';
             let url = 'https://newswebsite-fza6.onrender.com/api/v1/articles';
