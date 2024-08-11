@@ -5,6 +5,7 @@ import Footer from './components/footer';
 import { Container, CssBaseline } from '@mui/material';
 import MediaGrid from './components/mediaGrid';
 import ArticleDetails from './components/ArticleDetailsPage/ArticleDetails'; // Ensure correct import path
+import Advertisement from './components/advertisement/Advertisement';
 import './App.css';
 
 const App: React.FC = () => {
@@ -12,6 +13,7 @@ const App: React.FC = () => {
     <>
       <CssBaseline />
       <NavBar />
+      {/* <Advertisement /> */}
       <main>
         <Container maxWidth="lg">
           <Routes>
@@ -25,7 +27,9 @@ const App: React.FC = () => {
             <Route path="/article" element={<ArticleDetails />} />
           </Routes>
         </Container>
+        <Advertisement />
       </main>
+      
       <Footer />
     </>
   );

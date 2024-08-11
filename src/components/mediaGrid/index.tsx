@@ -27,11 +27,9 @@ const MediaGrid = () => {
 
             //let url = 'http://localhost:8080/api/v1/articles';
             let url='https://newswebsite-fza6.onrender.com/api/v1/articles';
-            //let url = 'https://newswebsite-fza6.onrender.com/api/v1/articles/by-category?categoryId=rajneeti';
-
+           
             if (categoryId) {
                 url = 'https://newswebsite-fza6.onrender.com/api/v1/articles/by-category?categoryId='+`${categoryId}`;
-                
                 //url = `http://localhost:8080/api/v1/articles/by-category?categoryId=rajneeti`;
 
             }
