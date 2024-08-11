@@ -26,7 +26,7 @@ const MediaGrid = () => {
             let url = 'https://newswebsite-fza6.onrender.com/api/v1/articles/by-category?categoryId=rajneeti';
 
             if (categoryId) {
-                url = 'https://newswebsite-fza6.onrender.com/api/v1/articles/by-category?categoryId=rajneeti';
+                url = 'https://newswebsite-fza6.onrender.com/api/v1/articles/by-category?categoryId=S2';
                 
                 //url = `http://localhost:8080/api/v1/articles/by-category?categoryId=rajneeti`;
 
