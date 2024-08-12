@@ -15,7 +15,7 @@ const Advertisement: React.FC = () => {
     useEffect(() => {
         const fetchAdvertisements = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/v1/articles/advertisements');
+                const response = await fetch('https://newswebsite-fza6.onrender.com/api/v1/articles/advertisements');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
